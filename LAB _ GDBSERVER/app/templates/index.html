@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magazine Techno</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 10px;
+            text-align: center;
+        }
+        nav {
+            background-color: #444;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #333;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            padding: 10px 0;
+        }
+        ul li a {
+            text-decoration: none;
+            color: #007BFF;
+        }
+        ul li a:hover {
+            text-decoration: underline;
+        }
+        .article {
+            margin-bottom: 20px;
+        }
+        .article img {
+            max-width: 100%;
+            height: auto;
+        }
+        .footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 20px;
+        }
+
+        .contact-section {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Magazine Techno</h1>
+        <p>Votre source pour les dernières nouveautés en technologie, sécurité et innovation</p>
+    </header>
+    <nav>
+        <a href="/">Accueil</a>
+        <a href="/view?article=nouveautes-tech">Nouveautés Tech</a>
+        <a href="/features">Dossiers</a>
+        <a href="/securite">Sécurité</a>
+        <a onclick="scrollToContact()" >Contact</a>
+    </nav>
+    <div class="container">
+        <div class="article">
+            <h2>Top 5 des gadgets de 2023</h2>
+            <img src="gadgets.jpg" alt="Top Gadgets">
+            <p>L'année 2023 nous a apporté une multitude de gadgets innovants qui promettent de changer notre façon de vivre et de travailler. Des smartphones à la pointe de la technologie aux assistants domestiques alimentés par l'IA, voici nos meilleurs choix.</p>
+            <p>Pour en savoir plus sur les gadgets, explorez notre <a href="/view?article=gadgets-2023">dossier complet</a>.</p>
+        </div>
+
+        <div class="article">
+            <h2>L'avenir de la cybersécurité</h2>
+            <img src="cybersecurite.jpg" alt="Cybersecurity">
+            <p>Avec l'augmentation des menaces cybernétiques, rester en avance est plus important que jamais. Dans cet article, nous explorons les dernières tendances en matière de cybersécurité et ce qu'elles signifient pour l'avenir.</p>
+        </div>
+
+        <div class="article">
+            <h2>Comprendre l'IA et l'apprentissage automatique</h2>
+            <img src="ia.jpg" alt="Intelligence Artificielle">
+            <p>L'intelligence artificielle et l'apprentissage automatique transforment les industries du monde entier. Découvrez comment ces technologies fonctionnent et ce que leur avenir nous réserve.</p>
+        </div>
+
+        <div class="article">
+            <h2>Comment protéger vos données en ligne</h2>
+            <p>Vos données personnelles sont plus vulnérables que vous ne le pensez. Dans ce guide, nous partageons des conseils pratiques pour sécuriser vos informations lorsque vous naviguez sur le web.</p>
+            <p>Pour tester votre sécurité, faites notre <a href="#">Quiz de Sécurité</a> !</p>
+        </div>
+
+    <div class="contact-section" id="contact">
+        <h2>Contactez-Nous</h2>
+        <p>Nous sommes ravis de vous entendre. Veuillez nous contacter à l'adresse suivante :</p>
+        <address>
+            <p>Email : <a href="mailto:contact@votresite.com">contact@votresite.com</a></p>
+            <p>Téléphone : +33 1 23 45 67 89</p>
+            <p>Adresse : 123 Rue Exemple, 75001 Paris, France</p>
+        </address>
+        <p>Vous pouvez également nous envoyer un message via le formulaire ci-dessous :</p>
+        <form action="/" method="post">
+            <label for="name">Nom :</label>
+            <input type="text" id="name" name="name" required><br><br>
+            <label for="email">Email :</label>
+            <input type="email" id="email" name="email" required><br><br>
+            <label for="message">Message :</label><br>
+            <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
+            <button type="submit">Envoyer</button>
+        </form>
+    </div>
+    </div>
+
+
+
+    <script>
+        function scrollToContact() {
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+    <div class="footer">
+        <p>&copy; 2024 Magazine Techno. Tous droits réservés.</p>
+    </div>
+</body>
+</html>

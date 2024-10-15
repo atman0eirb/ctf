@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 1200px;
+            margin: auto;
+        }
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .section h3 {
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+            color: #007bff;
+        }
+        .stats, .recent-activities, .system-info {
+            display: flex;
+            justify-content: space-between;
+        }
+        .stats div, .recent-activities div, .system-info div {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            width: 30%;
+            text-align: center;
+        }
+        .stats div:nth-child(odd), .recent-activities div:nth-child(odd), .system-info div:nth-child(odd) {
+            margin-right: 10px;
+        }
+        .stats div:last-child, .recent-activities div:last-child, .system-info div:last-child {
+            margin-right: 0;
+        }
+        .message-form {
+            margin: 20px 0;
+        }
+        .message-form input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .message-form button {
+            padding: 10px;
+            background-color: #007bff;
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .message-form button:hover {
+            background-color: #0056b3;
+        }
+        .messages {
+            margin-top: 20px;
+        }
+        .message-item {
+            background: #f9f9f9;
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            word-wrap: break-word;
+        }
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 14px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div style="display: flex; justify-content: space-between; align-items: center; background-color: #f9f9f9; padding: 10px;">
+        <h2>Welcome Admin !</h2>
+        <a href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    </div>
+    
+    
+    <div class="container">
+
+        <h2>Dashboard</h2>
+        
+        <div class="section">
+            <h3>User Statistics</h3>
+            <div class="stats">
+                <div>
+                    <h4>Total Users</h4>
+                    <p>1,235</p>
+                </div>
+                <div>
+                    <h4>Active Users</h4>
+                    <p>1,123</p>
+                </div>
+                <div>
+                    <h4>New Registrations</h4>
+                    <p>45</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>Recent Activities</h3>
+            <div class="recent-activities">
+                <div>
+                    <h4>Login Attempts</h4>
+                    <p>120</p>
+                </div>
+                <div>
+                    <h4>File Uploads</h4>
+                    <p>78</p>
+                </div>
+                <div>
+                    <h4>Support Tickets</h4>
+                    <p>15</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>System Information</h3>
+            <div class="system-info">
+                <div>
+                    <h4>Server Uptime</h4>
+                    <p>72 days</p>
+                </div>
+                <div>
+                    <h4>Disk Usage</h4>
+                    <p>75% used</p>
+                </div>
+                <div>
+                    <h4>Active Sessions</h4>
+                    <p>256</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>Notes</h3>
+            <form class="message-form" action="/dashboard" method="post">
+                <input type="text" name="message" placeholder="Enter your Note here" required>
+                <button type="submit">Add Note</button>
+            </form>
+            <div class="messages">
+                {% for message in messages %}
+                    <div class="message-item">{{ render_template_string(message) }}</div>
+                {% endfor %}
+            </div>
+        </div>
+        
+        <footer>
+            <div>Have issues? <a href="mailto:admin@app.com">Contact support</a></div>
+        </footer>
+    </div>
+</body>
+</html>
